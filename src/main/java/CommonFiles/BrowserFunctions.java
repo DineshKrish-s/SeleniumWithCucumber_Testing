@@ -10,7 +10,10 @@ public class BrowserFunctions {
 
 	static WebDriver driver;
 
-	public void launchDriver(String browser, String url) {
+    String browser = ConfigurationReader.getBrowser();
+    String url = ConfigurationReader.getUrl();
+    
+	public void launchDriver() {
 
 		switch(browser) {
 		
@@ -31,9 +34,17 @@ public class BrowserFunctions {
         
         // Launch Website
         driver.get(url);
+        
+        setDrivers();
 
 	}
 
+	public void setDrivers() {
+	
+		CommonFunctions.setDrivers(getDriver());
+		WaitFunctions.setDrivers(getDriver());
+	}
+	
 	public void closeBrowser() {
 		driver.quit();
 	}

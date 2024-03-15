@@ -12,10 +12,10 @@ public class CommonFunctions {
 
 	BrowserFunctions browser = new BrowserFunctions();
 
-	WebDriver driver;
+	static WebDriver driver;
 	
-	public CommonFunctions() {
-		this.driver = browser.getDriver();
+ 	public static void setDrivers(WebDriver driver){
+		CommonFunctions.driver = driver;
 	}
 	
 	public void click(By element) {
@@ -40,6 +40,19 @@ public class CommonFunctions {
 		return driver.getTitle();
 	}
 
+	public boolean isBrowserClosed(WebDriver driver)
+	{
+	    boolean isClosed = false;
+	    
+	    try {
+	        driver.getTitle();
+	    } catch(Exception ubex) {
+	        isClosed = true;
+	    }
+
+	    return isClosed;
+	}
+	
 	public boolean waitForFileDownload(String fileName, int timeoutInSeconds) {
 
 		File file = new File(System.getProperty("user.home") + "/Downloads/" + fileName);

@@ -12,11 +12,11 @@ public class WaitFunctions {
 
 	BrowserFunctions browser = new BrowserFunctions();
 
-	WebDriver driver;
-	WebDriverWait wait;
+	static WebDriver driver;
+	static WebDriverWait wait;
 	
-	public WaitFunctions(){
-		this.driver = browser.getDriver();
+	public static void setDrivers(WebDriver driver){
+		WaitFunctions.driver = driver;
 		wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 	}
 	

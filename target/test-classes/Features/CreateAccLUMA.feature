@@ -1,6 +1,6 @@
 Feature: Title of your feature
   Scenario: Title of your scenario
-    Given Launch URL
+    Given Launch Browser
     Then Create an Account
 		Then Close Browser
 #    Examples: 
