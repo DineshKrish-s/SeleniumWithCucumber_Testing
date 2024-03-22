@@ -13,17 +13,17 @@ public class ConfigurationReader {
 
 			properties = new Properties();
 			properties.load(fileInputStream);
-		
+
 		} catch (IOException e) {
-			e.printStackTrace();   
-		}   
+			e.printStackTrace();
+		}
 	}
+
 	public static String getBrowser() {
-		return properties.getProperty("browser");	    
+		return properties.getProperty("browser");
 	}
 
 	public static String getUrl() {
-		return properties.getProperty("url");	    
+		return properties.getProperty("url");
 	}
 }
-

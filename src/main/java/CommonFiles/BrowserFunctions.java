@@ -10,34 +10,47 @@ public class BrowserFunctions {
 
 	static WebDriver driver;
 
-	public void launchDriver(String browser, String url) {
+	String browser = ConfigurationReader.getBrowser();
+	String url = ConfigurationReader.getUrl();
 
-		switch(browser) {
-		
-			case "chrome": WebDriverManager.chromedriver().setup();
-	
-					        // Create a new instance of ChromeDriver
-					        driver = new ChromeDriver();
-					        break;
-			case "firefox": WebDriverManager.firefoxdriver().setup();
-	
-	        				// Create a new instance of ChromeDriver
-	        				driver = new FirefoxDriver();
-	        				break;
+	public void launchDriver() {
+
+		switch (browser) {
+
+		case "chrome":
+			WebDriverManager.chromedriver().setup();
+
+			// Create a new instance of ChromeDriver
+			driver = new ChromeDriver();
+			break;
+		case "firefox":
+			WebDriverManager.firefoxdriver().setup();
+
+			// Create a new instance of ChromeDriver
+			driver = new FirefoxDriver();
+			break;
 		}
 
-        // Maximize the browser
-        driver.manage().window().maximize();
-        
-        // Launch Website
-        driver.get(url);
+		// Maximize the browser
+		driver.manage().window().maximize();
 
+		// Launch Website
+		driver.get(url);
+
+		setDrivers();
+
+	}
+
+	public void setDrivers() {
+
+		CommonFunctions.setDrivers(getDriver());
+		WaitFunctions.setDrivers(getDriver());
 	}
 
 	public void closeBrowser() {
 		driver.quit();
 	}
-	
+
 	public WebDriver getDriver() {
 		return driver;
 	}
