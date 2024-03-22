@@ -42,11 +42,11 @@ public class BrowserFunctions {
 	}
 
 	public void setDrivers() {
-
+	
 		CommonFunctions.setDrivers(getDriver());
 		WaitFunctions.setDrivers(getDriver());
 	}
-
+	
 	public void closeBrowser() {
 		driver.quit();
 	}
