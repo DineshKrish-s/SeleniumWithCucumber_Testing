@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 
 import com.aventstack.extentreports.Status;
 
+import StaticFiles.ExtentManager;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 
@@ -23,13 +24,13 @@ public class CommonFunctions {
 		CommonFunctions.driver = driver;
 	}
 
-	public void click(By element) {
+	public void click(By element, String name) {
 
 		try {
 			driver.findElement(element).click();
-			ExtentManager.logTestWithScreenshot(Status.PASS, "Element Clicked as Expected", driver);
+			ExtentManager.logTestWithScreenshot(Status.PASS, name +" Clicked as Expected", driver);
 		} catch (Exception e) {
-			ExtentManager.logTestWithScreenshot(Status.FAIL, "Element is not Clicked as Expected", driver);
+			ExtentManager.logTestWithScreenshot(Status.FAIL, name + " is not Clicked as Expected", driver);
 		}
 
 	}
@@ -38,13 +39,13 @@ public class CommonFunctions {
 		return driver.findElement(element).getText();
 	}
 
-	public void setText(By element, String text) {
+	public void setText(By element, String name, String text) {
 		try {
 			driver.findElement(element).sendKeys(text);
-			ExtentManager.logTestWithScreenshot(Status.PASS, "Text Entered as Expected", driver);
+			ExtentManager.logTestWithScreenshot(Status.PASS, '"' + text +'"'+ " Text Entered in "+name+" Expected", driver);
 		} catch (Exception e) {
 
-			ExtentManager.logTestWithScreenshot(Status.FAIL, "Text Not Entered as Expected", driver);
+			ExtentManager.logTestWithScreenshot(Status.FAIL, '"' + text +'"' + " Text Not Entered in "+name+" Expected", driver);
 		}
 	}
 

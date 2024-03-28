@@ -5,10 +5,10 @@ import com.aventstack.extentreports.Status;
 
 import CommonFiles.BrowserFunctions;
 import CommonFiles.CommonFunctions;
-import CommonFiles.ExtentManager;
 import CommonFiles.WaitFunctions;
 import PageFiles.CreateAccPageLUMA;
 import PageFiles.HomePageLUMA;
+import StaticFiles.ExtentManager;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 

@@ -5,7 +5,7 @@ import org.testng.annotations.BeforeClass;
 
 import com.aventstack.extentreports.ExtentReports;
 
-import CommonFiles.ExtentManager;
+import StaticFiles.ExtentManager;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 

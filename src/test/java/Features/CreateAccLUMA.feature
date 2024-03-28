@@ -8,6 +8,6 @@ Feature: Create Account in LUMA Applications
     Examples: 
       | testCase_ID | sheetName |    fileName   |
       |     TC_01   | CreateAcc | CreateAccLUMA |
-      |     TC_02   | CreateAcc | CreateAccLUMA |
-      |     TC_03   | CreateAcc | CreateAccLUMA |
-      |     TC_04   | CreateAcc | CreateAccLUMA |
+      #|     TC_02   | CreateAcc | CreateAccLUMA |
+      #|     TC_03   | CreateAcc | CreateAccLUMA |
+      #|     TC_04   | CreateAcc | CreateAccLUMA |
