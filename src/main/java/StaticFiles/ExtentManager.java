@@ -142,17 +142,16 @@ public class ExtentManager {
 
 		return Base64.getEncoder().encodeToString(imageBytes);
 	}
+	
 }
+	class ExtentReportManager {
+		private static ExtentTest extentTest;
 
-class ExtentReportManager {
+		public static ExtentTest getExtentTest() {
+			return extentTest;
+		}
 
-	private static ExtentTest extentTest;
-
-	public static ExtentTest getExtentTest() {
-		return extentTest;
-	}
-
-	public static void setExtentTest(ExtentTest test) {
-		extentTest = test;
-	}
+		public static void setExtentTest(ExtentTest test) {
+			extentTest = test;
+		}
 }
