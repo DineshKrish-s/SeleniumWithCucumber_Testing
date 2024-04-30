@@ -6,8 +6,10 @@
       <class name="TestRunner.CreateAccLUMA_TestRunner">
         <methods>
           <include name="setUpClass"/>
+          <include name="close"/>
+          <include name="start"/>
           <include name="tearDownClass"/>
-          <include name="runScenario" invocation-numbers="0"/>
+          <include name="runScenario"/>
         </methods>
       </class> <!-- TestRunner.CreateAccLUMA_TestRunner -->
     </classes>
